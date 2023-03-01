@@ -4,7 +4,6 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background: rgb(245, 245, 245);
 }
 
 a {
@@ -41,7 +40,7 @@ a {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 2em;
+  gap: 3em;
 }
 .race-card {
   display: flex;
@@ -51,7 +50,8 @@ a {
   width: 20em;
   background: #ffffff;
   border: 4px red solid;
-  border-top-left-radius: 3em;
+  border-left: 0;
+  border-bottom: 0;
   border-top-right-radius: 3em;
 }
 .race-card_date {
@@ -65,4 +65,5 @@ a {
   background-color: red;
   color: #ffffff;
   margin: 0;
+  border-top-right-radius: .5em;
 }

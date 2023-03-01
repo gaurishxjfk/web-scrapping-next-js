@@ -40,15 +40,10 @@ export default function Home({ scheduleData }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const apiUrl =
-    process.env.NODE_ENV === "production"
-      ? process.env.NEXT_PUBLIC_API_URL_PROD
-      : process.env.NEXT_PUBLIC_API_URL_DEV;
 
   const { data } = await axios.get<{ scheduleData: ScheduleItem[] }>(
-    `${apiUrl}/api/schedule`
+    `http://localhost:3001/api/schedule`
   );
-
   return {
     props: {
       scheduleData: data,
