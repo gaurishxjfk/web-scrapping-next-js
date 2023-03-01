@@ -42,7 +42,7 @@ export default function Home({ scheduleData }: HomeProps) {
 export const getStaticProps: GetStaticProps = async (context) => {
 
   const { data } = await axios.get<{ scheduleData: ScheduleItem[] }>(
-    `http://localhost:3001/api/schedule`
+    `http://127.0.0.1/:80/api/schedule`
   );
   return {
     props: {
