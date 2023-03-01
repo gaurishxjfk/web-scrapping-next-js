@@ -42,7 +42,7 @@ export default function Home({ scheduleData }: HomeProps) {
 export const getStaticProps: GetStaticProps = async (context) => {
 
   const { data } = await axios.get<{ scheduleData: ScheduleItem[] }>(
-    `https://web-scrapping-next-nnpsmcu09-nerdgaurish.vercel.app/api/schedule`
+    `http://localhost:3001/api/schedule`
   );
   return {
     props: {
