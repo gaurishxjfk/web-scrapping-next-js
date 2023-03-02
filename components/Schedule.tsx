@@ -12,7 +12,6 @@ const Schedule: React.FC = () => {
   const [scheduleData, setScheduleData] = useState<ScheduleItem[]>([]);
 
   useEffect(() => {
-    console.log(window.location.href)
     const fetchScheduleData = async () => {
       const { data } = await axios.get<ScheduleResponse>(
         `${window.location.href}/api/schedule`
@@ -26,12 +25,16 @@ const Schedule: React.FC = () => {
     <main>
       <h1 className="title">F1 Schedule 2023</h1>
       <div className="container">
-        {scheduleData.map((race) => (
-          <div className="race-card" key={race.date}>
-            <p className="race-card_date">{race.date}</p>
-            <h1 className="race-card_venue">{race.venue}</h1>
-          </div>
-        ))}
+        {scheduleData && scheduleData.length > 0 ? (
+          scheduleData.map((race) => (
+            <div className="race-card" key={race.date}>
+              <p className="race-card_date">{race.date}</p>
+              <h1 className="race-card_venue">{race.venue}</h1>
+            </div>
+          ))
+        ) : (
+          <div className="lds-hourglass"></div>
+        )}
       </div>
     </main>
   );
