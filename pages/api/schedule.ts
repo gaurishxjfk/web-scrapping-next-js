@@ -42,7 +42,7 @@ export default async function getSchedule(
       };
     });
 
-    res.status(200).json(schedule);
+    res.status(200).json({scheduleData: schedule});
   } catch (error) {
     console.error(error);
     res.status(500).send("Error fetching schedule");
